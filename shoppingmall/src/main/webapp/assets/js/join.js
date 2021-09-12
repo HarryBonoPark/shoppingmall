@@ -77,7 +77,7 @@ $(function() {
         if(!inputValidation(member_birth_month, "생년월일")) {return;}
         if(!inputValidation(member_birth_date, "생년월일")) {return;}
 
-        let birth = member_birth_year+leadingZero(member_birth_month)+leadingZero(member_birth_date);
+        let member_birth = member_birth_year+leadingZero(member_birth_month)+leadingZero(member_birth_date);
         
         let member_gen = $("#member_gen option:selected").val();
 
@@ -95,7 +95,7 @@ $(function() {
             mi_name:member_name,
             mi_email:member_email,
             mi_address:member_address,
-            mi_birth:birth,
+            mi_birth:member_birth,
             mi_pwd:member_pwd,
             mi_gen:member_gen,
             mi_phone:member_phone,

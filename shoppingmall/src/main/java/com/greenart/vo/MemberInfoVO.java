@@ -11,7 +11,7 @@ public class MemberInfoVO {
     private String mi_name;
     private String mi_email;
     private String mi_address;
-    private Date mi_birth;
+    private String mi_birth;
     private String mi_pwd;
     private Integer mi_gen;
     private String mi_phone;
