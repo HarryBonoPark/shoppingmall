@@ -86,7 +86,7 @@
             <tr>
                 <td>전화번호 <span class="red">*</span></td>
                 <td colspan="3">
-                    <input type="text" id="member_phone">
+                    <input type="text" id="member_phone" placeholder="'-'는 제외하고 입력해주세요.">
                 </td>
             </tr>
             <tr>
@@ -105,7 +105,6 @@
                 <td colspan="4">
                     <button id="join">회원가입</button>
                 </td>
-            </tr>
             </tr>
         </tbody>
     </table>

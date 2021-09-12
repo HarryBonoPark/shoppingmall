@@ -20,4 +20,14 @@
     <select id="selectMemberByEmail" resultType="java.lang.Integer">
         select count(*) from member_info where mi_email = #{email}
     </select>
+    
+    <select id="MemberLogin" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_id = #{id} and mi_pwd = #{pwd}
+    </select>
+    <select id="selectMemberInfo" resultType="com.greenart.vo.MemberInfoVO">
+        select
+            mi_id, mi_name, mi_email, mi_address, mi_birth, 
+            mi_gen, mi_phone, mi_grade, mi_point, mi_status
+        from member_info where mi_id = #{id}
+    </select>
 </mapper>

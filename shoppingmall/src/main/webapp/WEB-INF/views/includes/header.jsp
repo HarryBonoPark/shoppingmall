@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,16 @@
                     <img src="/assets/images/샛별_ 택배 배송안내.png">
                 </a>
                 <div class="user_menu">
-                    <a href="/login">로그인</a>
-                    <span>|</span>
-                    <a href="/join">회원가입</a>
+                    <c:if test="${member == null}">
+                        <a href="/login">로그인</a>
+                        <span>|</span>
+                        <a href="/join">회원가입</a>
+                    </c:if>
+                    <c:if test="${member != null}">
+                        <a href="#">${member.mi_name}님</a>
+                        <span>|</span>
+                        <a href="#">로그아웃</a>
+                    </c:if>
                     <span>|</span>
                     <a href="#">고객센터</a>
                 </div>

@@ -1,0 +1,45 @@
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.login_table td {
+    padding: 5px;
+}
+.login_table input {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.login_table #join {
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    height: 50px;
+    width: 300px;
+    font-weight: 600;
+    background-color: #5f0080;
+    color: #fff;
+}
+.login_table #login {
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    height: 50px;
+    width: 300px;
+    font-weight: 600;
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080;
+}
+
+.login_table {width: 540px; margin: 0 auto; margin-top: 20px;}

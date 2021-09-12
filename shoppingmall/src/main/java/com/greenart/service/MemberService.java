@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.greenart.mapper.MemberMapper;
 import com.greenart.utils.AESAlgorithm;
+import com.greenart.vo.LoginVO;
 import com.greenart.vo.MemberInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,28 @@ public class MemberService {
 
     public boolean isDuplicatedEmail(String email) {
         return mapper.selectMemberByEmail(email) > 0;
+    }
+
+    public Map<String, Object> MemberLogin(LoginVO vo) {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        String pwd = vo.getPwd();
+        try {
+            pwd = AESAlgorithm.Encrypt(pwd);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        vo.setPwd(pwd);
+        Integer result = mapper.MemberLogin(vo);
+        if(result == 1) {
+            resultMap.put("status", true);
+            MemberInfoVO member = mapper.selectMemberInfo(vo.getId());
+            resultMap.put("member", member);
+        }
+        else {
+            resultMap.put("status", false);
+            resultMap.put("message", "아이디 혹은 비밀번호를 확인해주세요.");
+        }
+        return resultMap;
     }
 }
