@@ -17,4 +17,7 @@
     <select id="selectMemberById" resultType="java.lang.Integer">
         select count(*) from member_info where mi_id = #{id}
     </select>
+    <select id="selectMemberByEmail" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_email = #{email}
+    </select>
 </mapper>

@@ -28,4 +28,8 @@ public class MemberService {
     public boolean isDuplicatedId(String id) {
         return mapper.selectMemberById(id) > 0;
     }
+
+    public boolean isDuplicatedEmail(String email) {
+        return mapper.selectMemberByEmail(email) > 0;
+    }
 }

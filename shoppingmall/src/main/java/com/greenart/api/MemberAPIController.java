@@ -37,4 +37,19 @@ public class MemberAPIController {
 
         return resultMap;
     }
+
+    @GetMapping("/member/email_check")
+    public Map<String, Object> getMemberEmailCheck(@RequestParam String email) {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        if(service.isDuplicatedEmail(email) == true) {
+            resultMap.put("status", false);
+            resultMap.put("message", "이미 사용중인 이메일입니다.");
+            return resultMap;
+        }
+        resultMap.put("status", true);
+        resultMap.put("message", "사용 가능한 이메일입니다.");
+
+        return resultMap;
+    }
 }

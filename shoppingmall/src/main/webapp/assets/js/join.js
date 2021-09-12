@@ -1,11 +1,16 @@
 $(function() {
 
     let idCheck = false;
+    let emailCheck = false;
 
     $("#join").click(function() {
 
         if(idCheck == false) {
             alert("아이디 중복 여부를 확인해주세요.");
+            return;
+        }
+        if(emailCheck == false) {
+            alert("이메일 중복 여부를 확인해주세요.");
             return;
         }
 
@@ -141,6 +146,38 @@ $(function() {
     $("#member_id").change(function(){
         idCheck = false;
     });
+
+    $("#check_email").click(function() {
+
+        const pattern = /\s/g;
+        const patternEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+        let member_email = $("#member_email").val();
+        if(member_email == "" || member_email == null || member_email == undefined) {
+            alert("이메일을 입력하세요.");
+            return;
+        }
+        if(member_email.match(pattern)){
+            alert("이메일에는 공백문자가 들어갈 수 없습니다.");
+            return;
+        }
+        if(!member_email.match(patternEmail)){
+            alert("올바른 이메일 형식을 입력하세요\n예시) market@kurly.com");
+            return;
+        }
+
+        $.ajax({
+            type:"get",
+            url:"/member/email_check?email="+member_email,
+            success:function(r) {
+                alert(r.message);
+                emailCheck = r.status;
+            }
+        })
+    })
+    $("member_email").change(function() {
+        emailCheck = false;
+    })
 
 })
 function inputValidation(input, type) {
