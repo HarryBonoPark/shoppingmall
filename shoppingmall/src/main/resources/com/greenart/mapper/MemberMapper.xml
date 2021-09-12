@@ -14,4 +14,7 @@
             #{mi_pwd}, #{mi_gen}, #{mi_phone}, #{mi_pay_card}, #{mi_pay_account}
         )
     </insert>
+    <select id="selectMemberById" resultType="java.lang.Integer">
+        select count(*) from member_info where mi_id = #{id}
+    </select>
 </mapper>

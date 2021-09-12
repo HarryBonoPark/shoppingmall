@@ -1,6 +1,13 @@
 $(function() {
 
+    let idCheck = false;
+
     $("#join").click(function() {
+
+        if(idCheck == false) {
+            alert("아이디 중복 여부를 확인해주세요.");
+            return;
+        }
 
         // 공백 체크 정규 표현식
         const pattern = /\s/g;
@@ -107,6 +114,34 @@ $(function() {
             }
         })
     })
+
+    $("#check_id").click(function() {
+
+        const pattern = /\s/g;
+
+        let member_id = $("#member_id").val();
+        if(member_id == "" || member_id == null || member_id == undefined){
+            alert("아이디를 입력해주세요");
+            return;
+        }
+        if(member_id.match(pattern)){
+            alert("아이디에는 공백문자가 들어갈 수 없습니다.");
+            return;
+        }
+
+        $.ajax({
+            type:"get",
+            url:"/member/id_check?id="+member_id,
+            success:function(r) {
+                alert(r.message);
+                idCheck = r.status;
+            }
+        })
+    })
+    $("#member_id").change(function(){
+        idCheck = false;
+    });
+
 })
 function inputValidation(input, type) {
     if(input == "" || input == null || input == undefined){

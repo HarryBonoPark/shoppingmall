@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>회원가입</title>
+    <title>마켓컬리 :: 회원가입</title>
     <link rel="stylesheet" href="/assets/css/join.css">
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/join.js"></script>

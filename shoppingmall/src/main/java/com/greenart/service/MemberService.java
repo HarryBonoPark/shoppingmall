@@ -24,4 +24,8 @@ public class MemberService {
 
         return resultMap;
     }
+
+    public boolean isDuplicatedId(String id) {
+        return mapper.selectMemberById(id) > 0;
+    }
 }
