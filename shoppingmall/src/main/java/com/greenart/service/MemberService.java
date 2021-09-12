@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.greenart.mapper.MemberMapper;
+import com.greenart.utils.AESAlgorithm;
 import com.greenart.vo.MemberInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,15 @@ public class MemberService {
 
         resultMap.put("status", true);
         resultMap.put("message", "회원가입이 완료되었습니다.");
+
+        String pwd = vo.getMi_pwd();
+        try {
+            pwd = AESAlgorithm.Encrypt(pwd);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        vo.setMi_pwd(pwd);
 
         mapper.insertMemberInfo(vo);
 
