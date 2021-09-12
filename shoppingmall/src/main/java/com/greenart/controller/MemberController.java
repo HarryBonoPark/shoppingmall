@@ -1,5 +1,7 @@
 package com.greenart.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -13,5 +15,11 @@ public class MemberController {
     @GetMapping("/join")
     public String getJoin() {
         return "/member/join";
+    }
+
+    @GetMapping("/logout")
+    public String getLogout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
     }
 }

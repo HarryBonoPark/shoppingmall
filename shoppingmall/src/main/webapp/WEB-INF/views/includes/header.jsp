@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/assets/js/header.js"></script>
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@
                     <c:if test="${member != null}">
                         <a href="#">${member.mi_name}님</a>
                         <span>|</span>
-                        <a href="#">로그아웃</a>
+                        <a href="/logout" id="logout">로그아웃</a>
                     </c:if>
                     <span>|</span>
                     <a href="#">고객센터</a>

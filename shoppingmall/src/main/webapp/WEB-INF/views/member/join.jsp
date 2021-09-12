@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/views/includes/header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,11 @@
     <link rel="stylesheet" href="/assets/css/join.css">
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/join.js"></script>
+    <script>
+        <c:if test="${member != null}">
+            location.href = "/";
+        </c:if>
+    </script>
 </head>
 <body>
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
