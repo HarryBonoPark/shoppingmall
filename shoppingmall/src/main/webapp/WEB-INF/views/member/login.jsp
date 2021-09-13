@@ -16,7 +16,6 @@
     </script>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
 
     <h1 class="title">로그인</h1>
     <table class="login_table">

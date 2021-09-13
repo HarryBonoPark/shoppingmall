@@ -4,11 +4,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>seller main</title>
+    <title>관리자 :: 판매자</title>
 </head>
 <body>
-    
-    <h1>판매자 로그인</h1>
-    
+    <%@include file="/WEB-INF/views/admin/main.jsp" %>
+    <h1 class="title">판매자 관리</h1>
 </body>
 </html>

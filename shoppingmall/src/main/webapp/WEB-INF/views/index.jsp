@@ -9,7 +9,7 @@
 <body>
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
     
-    <a href="/seller">판매자 로그인</a>
+    <a href="/admin">관리자 페이지 이동</a>
 
     <%@include file="/WEB-INF/views/includes/footer.jsp"%>
 </body>

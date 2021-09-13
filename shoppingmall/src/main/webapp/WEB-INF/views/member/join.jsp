@@ -16,7 +16,6 @@
     </script>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
 
     <h1 class="title">회원가입</h1>
     <p><span class="red">*</span> 표시 항목은 필수 입력 항목입니다.</p>
