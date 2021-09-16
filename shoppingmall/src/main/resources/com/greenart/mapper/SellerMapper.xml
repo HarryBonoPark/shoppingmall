@@ -12,4 +12,7 @@
             #{si_id}, #{si_pwd}, #{si_name}, #{si_address}, #{si_email}, #{si_phone}
         )
     </insert>
+    <select id="selectSellerInfoById" resultType="java.lang.Integer">
+        select count(*) from seller_info where si_id = #{id}
+    </select>
 </mapper>

@@ -12,6 +12,10 @@ public class SellerService {
     SellerMapper mapper;
 
     public boolean insertSellerInfo(SellerVO vo) {
+        Integer cnt = mapper.selectSellerInfoById(vo.getSi_id());
+        if(cnt != 0) {
+            return false;
+        }
 
         if(vo.getSi_id() == "" || vo.getSi_id() == null || vo.getSi_id().length() < 4) {
             return false;
@@ -38,6 +42,14 @@ public class SellerService {
         }
 
         mapper.insertSellerInfo(vo);
+        return true;
+    }
+
+    public boolean checkSellerId(String id) {
+        Integer r = mapper.selectSellerInfoById(id);
+        if(r == 0) {
+            return false;
+        }
         return true;
     }
 }

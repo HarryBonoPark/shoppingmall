@@ -18,6 +18,7 @@
                 <tr>
                     <td>아이디</td>
                     <td><input type="text" id="seller_id"></td>
+                    <td><button id="id_check">중복확인</button></td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>

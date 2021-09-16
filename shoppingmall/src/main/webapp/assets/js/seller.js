@@ -1,6 +1,13 @@
 $(function() {
 
+    let checkId = true;
+
     $("#regist").click(function() {
+
+        if(checkId == true) {
+            alert("아이디 중복 여부를 확인해주세요");
+            return;
+        }
         
         let id = $("#seller_id").val();
         if(id == '' || id == null || id == undefined) {
@@ -74,5 +81,31 @@ $(function() {
                 console.log(error);
             }
         })
-    });
+    })
+
+    $("#id_check").click(function() {
+        
+        let id = $("#seller_id").val();
+        if(id == '' || id == null || id == undefined) {
+            alert("아이디를 입력하세요");
+            return;
+        }
+        if(id.length < 4) {
+            alert("아이디는 4자 이상으로 입력해주세요");
+            return;
+        }
+
+        $.ajax({
+            type:"get",
+            url:"/seller/checkId?id="+id,
+            success:function(data) {
+                alert(data.message);
+                checkId = data.status;
+            }
+        })
+    })
+
+    $("#seller_id").change(function(){
+        checkId = true;
+    })
 })

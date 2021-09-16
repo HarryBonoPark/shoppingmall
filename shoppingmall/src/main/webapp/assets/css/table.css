@@ -23,6 +23,16 @@
     margin-top: 20px; margin-bottom: 10px;
     margin-left: 10px; margin-right: 10px;
 }
-#regist:hover {
+#regist:hover #id_check:hover {
     background-color: #f4f3f9;
+}
+
+#id_check {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 30px;
 }
