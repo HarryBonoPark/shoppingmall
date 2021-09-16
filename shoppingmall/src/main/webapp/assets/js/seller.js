@@ -108,4 +108,27 @@ $(function() {
     $("#seller_id").change(function(){
         checkId = true;
     })
+
+    $.ajax({
+        type:"get",
+        url:"/seller/list",
+        success:function(r) {
+            for(let i=0; i<r.data.length; i++) {
+                let tag = 
+                    '<tr>'+
+                        '<td>'+r.data[i].si_seq+'</td>'+
+                        '<td>'+r.data[i].si_id+'</td>'+
+                        '<td>'+r.data[i].si_name+'</td>'+
+                        '<td>'+r.data[i].si_address+'</td>'+
+                        '<td>'+r.data[i].si_email+'</td>'+
+                        '<td>'+r.data[i].si_phone+'</td>'+
+                        '<td>'+r.data[i].si_grade+'</td>'+
+                        '<td>'+
+                            '<button data-seq="'+r.data[i].si_seq+'" class="seller_delete">삭제</button>'+
+                        '</td>'+
+                    '</tr>';
+                    $("#seller_list_body").append(tag);
+            }
+        }
+    })
 })

@@ -52,6 +52,24 @@
                 </tr>
             </tbody>
         </table>
+
+        <table class="seller_list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>아이디</td>
+                    <td>업체명</td>
+                    <td>주소</td>
+                    <td>이메일</td>
+                    <td>전화번호</td>
+                    <td>등급</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody id="seller_list_body">
+
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

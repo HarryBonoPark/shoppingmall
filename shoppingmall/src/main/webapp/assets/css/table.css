@@ -36,3 +36,13 @@
     cursor: pointer;
     height: 30px;
 }
+
+.seller_list td {
+    border-bottom: 1px solid #ccc; padding: 10px;
+    vertical-align: middle; text-align: center;
+}
+.seller_list tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+.seller_list {min-width: 1050px; margin-top: 30px;}
+.seller_list thead td{background-color: #5f0080; color: #fff;}

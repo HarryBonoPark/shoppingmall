@@ -1,5 +1,7 @@
 package com.greenart.service;
 
+import java.util.List;
+
 import com.greenart.mapper.SellerMapper;
 import com.greenart.vo.SellerVO;
 
@@ -51,5 +53,9 @@ public class SellerService {
             return false;
         }
         return true;
+    }
+
+    public List<SellerVO> selectSellerInfoAll() {
+        return mapper.selectSellerInfoAll();
     }
 }

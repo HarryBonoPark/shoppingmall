@@ -15,4 +15,7 @@
     <select id="selectSellerInfoById" resultType="java.lang.Integer">
         select count(*) from seller_info where si_id = #{id}
     </select>
+    <select id="selectSellerInfoAll" resultType="com.greenart.vo.SellerVO">
+        select * from seller_info
+    </select>
 </mapper>

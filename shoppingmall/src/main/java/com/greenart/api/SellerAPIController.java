@@ -1,6 +1,7 @@
 package com.greenart.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.greenart.service.SellerService;
@@ -42,6 +43,16 @@ public class SellerAPIController {
             resultMap.put("status", false);
             resultMap.put("message", "가입 가능한 아이디입니다.");
         }
+        return resultMap;
+    }
+
+    @GetMapping("/seller/list")
+    public Map<String, Object> getSellerInfoAll() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        List<SellerVO> list = service.selectSellerInfoAll();
+        resultMap.put("data", list);
+
         return resultMap;
     }
 }
