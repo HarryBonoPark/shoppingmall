@@ -1,0 +1,28 @@
+.seller_table input {
+    height: 10px;
+    width: 250px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#regist {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 40px;
+    width: 270px;
+    margin-top: 20px; margin-bottom: 10px;
+    margin-left: 10px; margin-right: 10px;
+}
+#regist:hover {
+    background-color: #f4f3f9;
+}
