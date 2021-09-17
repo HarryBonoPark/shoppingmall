@@ -1,4 +1,4 @@
-.seller_table input {
+.seller_table input, .delivery_table input {
     height: 10px;
     width: 250px;
     padding: 10px;
@@ -11,7 +11,7 @@
     margin-right: 10px;
     margin-top: 10px;
 }
-#regist {
+#regist, #delivery_add {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #fff;
     color: #5f0080;
@@ -23,11 +23,11 @@
     margin-top: 20px; margin-bottom: 10px;
     margin-left: 10px; margin-right: 10px;
 }
-#regist:hover #id_check:hover {
+#regist:hover, #id_check:hover, #delivery_add:hover, #check_name:hover {
     background-color: #f4f3f9;
 }
 
-#id_check {
+#id_check, #check_name, #delivery_add, #check_name {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #fff;
     color: #5f0080;
@@ -37,6 +37,11 @@
     height: 30px;
 }
 
+#delivery_add {
+    margin-left: 73px;
+    height: 35px;
+}
+
 .seller_list td {
     border-bottom: 1px solid #ccc; padding: 10px;
     vertical-align: middle; text-align: center;
@@ -44,5 +49,16 @@
 .seller_list tr:nth-child(even) {
     background-color: #fbfbfb;
 }
-.seller_list {min-width: 1050px; margin-top: 30px;}
+.seller_list {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
 .seller_list thead td{background-color: #5f0080; color: #fff;}
+
+.seller_delete {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+}
