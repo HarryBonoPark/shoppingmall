@@ -15,4 +15,7 @@
     <select id="selectDeliveryInfoByName" resultType="java.lang.Integer">
         select count(*) from delivery_info where di_name = #{name}
     </select>
+    <select id="selectDeliveryInfoAll" resultType="com.greenart.vo.DeliveryVO">
+        select * from delivery_info
+    </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.greenart.service;
 
+import java.util.List;
+
 import com.greenart.mapper.DeliveryMapper;
 import com.greenart.vo.DeliveryVO;
 
@@ -28,5 +30,9 @@ public class DeliveryService {
             return false;
         }
         return true;
+    }
+
+    public List<DeliveryVO> selectDeliveryInfoAll() {
+        return mapper.selectDeliveryInfoAll();
     }
 }

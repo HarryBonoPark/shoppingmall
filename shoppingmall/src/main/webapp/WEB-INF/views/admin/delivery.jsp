@@ -35,6 +35,23 @@
                 </tr>
             </tbody>
         </table>
+
+        <table class="delivery_list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>배송사 명</td>
+                    <td>전화번호</td>
+                    <td>배송비</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody id="delivery_list_body">
+
+            </tbody>
+        </table>
     </div>
+
+    <%@include file="/WEB-INF/views/includes/footer.jsp"%>
 </body>
 </html>

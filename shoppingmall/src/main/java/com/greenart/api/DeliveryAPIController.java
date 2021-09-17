@@ -1,6 +1,7 @@
 package com.greenart.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.greenart.service.DeliveryService;
@@ -40,6 +41,16 @@ public class DeliveryAPIController {
             resultMap.put("status", false);
             resultMap.put("message", "가입 가능한 배송업체입니다.");
         }
+        return resultMap;
+    }
+
+    @GetMapping("/delivery/list")
+    public Map<String, Object> getDeliveryInfoAll() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        List<DeliveryVO> list = service.selectDeliveryInfoAll();
+        resultMap.put("data", list);
+
         return resultMap;
     }
 }

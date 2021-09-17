@@ -66,4 +66,24 @@ $(function() {
     $("#delivery_name").change(function(){
         checkName = true;
     })
+
+    $.ajax({
+        type:"get",
+        url:"/delivery/list",
+        success:function(r) {
+            for(let i=0; i<r.data.length; i++) {
+                let tag =
+                    '<tr>'+
+                        '<td>'+r.data[i].di_seq+'</td>'+
+                        '<td>'+r.data[i].di_name+'</td>'+
+                        '<td>'+r.data[i].di_phone+'</td>'+
+                        '<td>'+r.data[i].di_price+'</td>'+
+                        '<td>'+
+                            '<button data-seq="'+r.data[i].di_seq+'" class="delivery_delete">삭제</button>'+
+                        '</td>'+
+                    '</tr>'
+                $("#delivery_list_body").append(tag);
+            }
+        }
+    })
 })
