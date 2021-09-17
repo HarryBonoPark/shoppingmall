@@ -84,6 +84,18 @@ $(function() {
                     '</tr>'
                 $("#delivery_list_body").append(tag);
             }
+            $(".delivery_delete").click(function(){
+                if(confirm("삭제하시겠습니까?")) {
+                    $.ajax({
+                        type:"delete",
+                        url:"/delivery/delete?seq="+$(this).attr("data-seq"),
+                        success:function(r) {
+                            alert(r.message);
+                            location.reload();
+                        }
+                    })
+                }
+            })
         }
     })
 })

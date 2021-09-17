@@ -18,4 +18,7 @@
     <select id="selectDeliveryInfoAll" resultType="com.greenart.vo.DeliveryVO">
         select * from delivery_info
     </select>
+    <delete id="deleteDeliveryInfo">
+        delete from delivery_info where di_seq = #{seq}
+    </delete>
 </mapper>

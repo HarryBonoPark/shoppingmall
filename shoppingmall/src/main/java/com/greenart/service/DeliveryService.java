@@ -35,4 +35,8 @@ public class DeliveryService {
     public List<DeliveryVO> selectDeliveryInfoAll() {
         return mapper.selectDeliveryInfoAll();
     }
+
+    public void deleteDeliveryInfo(Integer seq) {
+        mapper.deleteDeliveryInfo(seq);
+    }
 }
