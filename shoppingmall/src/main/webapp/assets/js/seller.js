@@ -1,5 +1,7 @@
 $(function() {
 
+    $("#seller").addClass("current");
+
     let checkId = true;
 
     $("#regist").click(function() {

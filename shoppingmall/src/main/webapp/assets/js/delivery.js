@@ -1,5 +1,7 @@
 $(function() {
 
+    $("#delivery").addClass("current");
+
     let checkName = true;
 
     $("#delivery_add").click(function(){

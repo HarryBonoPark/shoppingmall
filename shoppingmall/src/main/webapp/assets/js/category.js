@@ -1,5 +1,7 @@
 $(function() {
 
+    $("#category").addClass("current");
+
     $("#add_button").click(function() {
         
         let name = $("#cate_name").val();

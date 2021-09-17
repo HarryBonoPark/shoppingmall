@@ -1,5 +1,7 @@
 package com.greenart.mapper;
 
+import java.util.List;
+
 import com.greenart.vo.LoginVO;
 import com.greenart.vo.MemberInfoVO;
 
@@ -13,4 +15,6 @@ public interface MemberMapper {
 
     public Integer MemberLogin(LoginVO vo);
     public MemberInfoVO selectMemberInfo(String id);
+
+    public List<MemberInfoVO> selectMemberInfoAll();
 }

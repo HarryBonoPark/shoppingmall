@@ -1,6 +1,7 @@
 package com.greenart.service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.greenart.mapper.MemberMapper;
@@ -65,5 +66,9 @@ public class MemberService {
             resultMap.put("message", "아이디 혹은 비밀번호를 확인해주세요.");
         }
         return resultMap;
+    }
+
+    public List<MemberInfoVO> selectMemberInfoAll() {
+        return mapper.selectMemberInfoAll();
     }
 }

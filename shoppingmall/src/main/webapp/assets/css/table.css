@@ -42,17 +42,17 @@
     height: 35px;
 }
 
-.seller_list td, .delivery_list td {
+.seller_list td, .delivery_list td, .member_list td {
     border-bottom: 1px solid #ccc; padding: 10px;
     vertical-align: middle; text-align: center;
 }
-.seller_list tr:nth-child(even), .delivery_list tr:nth-child(even) {
+.seller_list tr:nth-child(even), .delivery_list tr:nth-child(even), .member_list tr:nth-child(even) {
     background-color: #fbfbfb;
 }
-.seller_list, .delivery_list {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
-.seller_list thead td, .delivery_list thead td{background-color: #5f0080; color: #fff;}
+.seller_list, .delivery_list, .member_list {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
+.seller_list thead td, .delivery_list thead td, .member_list thead td{background-color: #5f0080; color: #fff;}
 
-.seller_delete, .delivery_delete {
+.seller_delete, .delivery_delete, .member_delete {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: #fff;
     color: #5f0080;

@@ -1,6 +1,7 @@
 package com.greenart.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -60,6 +61,16 @@ public class MemberAPIController {
     public Map<String, Object> postMemberLogin(@RequestBody LoginVO vo, HttpSession session) {
         Map<String, Object> resultMap = service.MemberLogin(vo);
         session.setAttribute("member", resultMap.get("member"));
+
+        return resultMap;
+    }
+
+    @GetMapping("/member/list")
+    public Map<String, Object> getMemberInfoAll() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        List<MemberInfoVO> list = service.selectMemberInfoAll();
+        resultMap.put("data", list);
 
         return resultMap;
     }
