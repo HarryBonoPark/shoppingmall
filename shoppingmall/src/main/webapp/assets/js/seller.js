@@ -129,6 +129,18 @@ $(function() {
                     '</tr>';
                     $("#seller_list_body").append(tag);
             }
+            $(".seller_delete").click(function(){
+                if(confirm("삭제하시겠습니까?")) {
+                    $.ajax({
+                        type:"delete",
+                        url:"/seller/delete?seq="+$(this).attr("data-seq"),
+                        success:function(r) {
+                            alert(r.message);
+                            location.reload();
+                        }
+                    })
+                }
+            })
         }
     })
 })

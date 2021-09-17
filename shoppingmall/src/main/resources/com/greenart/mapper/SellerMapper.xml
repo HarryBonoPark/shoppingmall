@@ -18,4 +18,7 @@
     <select id="selectSellerInfoAll" resultType="com.greenart.vo.SellerVO">
         select * from seller_info
     </select>
+    <delete id="deleteSellerInfo">
+        delete from seller_info where si_seq = #{seq}
+    </delete>
 </mapper>

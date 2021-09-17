@@ -8,6 +8,7 @@ import com.greenart.service.SellerService;
 import com.greenart.vo.SellerVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +27,7 @@ public class SellerAPIController {
         Boolean r = service.insertSellerInfo(vo);
         if(r) {
             resultMap.put("result", "success");
-            resultMap.put("message", "회원가입이 성공적으로 완료되었습니다.");
+            resultMap.put("message", "업체가 등록되었습니다.");
         }
         
         return resultMap;
@@ -53,6 +54,16 @@ public class SellerAPIController {
         List<SellerVO> list = service.selectSellerInfoAll();
         resultMap.put("data", list);
 
+        return resultMap;
+    }
+
+    @DeleteMapping("/seller/delete")
+    public Map<String, Object> deleteSellerInfo(@RequestParam Integer seq) {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        service.deleteSellerInfo(seq);
+
+        resultMap.put("message", "업체가 삭제되었습니다.");
         return resultMap;
     }
 }

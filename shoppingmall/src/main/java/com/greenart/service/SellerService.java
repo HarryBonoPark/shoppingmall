@@ -58,4 +58,8 @@ public class SellerService {
     public List<SellerVO> selectSellerInfoAll() {
         return mapper.selectSellerInfoAll();
     }
+
+    public void deleteSellerInfo(Integer seq) {
+        mapper.deleteSellerInfo(seq);
+    }
 }
