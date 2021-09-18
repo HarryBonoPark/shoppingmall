@@ -71,4 +71,8 @@ public class MemberService {
     public List<MemberInfoVO> selectMemberInfoAll() {
         return mapper.selectMemberInfoAll();
     }
+
+    public void deleteMemberInfo(Integer seq) {
+        mapper.deleteMemberInfo(seq);
+    }
 }

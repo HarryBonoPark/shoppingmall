@@ -34,4 +34,7 @@
     <select id="selectMemberInfoAll" resultType="com.greenart.vo.MemberInfoVO">
         select * from member_info
     </select>
+    <delete id="deleteMemberInfo">
+        delete from member_info where mi_seq = #{seq}
+    </delete>
 </mapper>

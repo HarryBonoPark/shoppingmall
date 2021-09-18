@@ -17,4 +17,5 @@ public interface MemberMapper {
     public MemberInfoVO selectMemberInfo(String id);
 
     public List<MemberInfoVO> selectMemberInfoAll();
+    public void deleteMemberInfo(Integer seq);
 }

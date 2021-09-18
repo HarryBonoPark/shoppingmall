@@ -18,7 +18,7 @@ $(function(){
                         '<td>'+r.data[i].mi_gen+'</td>'+
                         '<td>'+r.data[i].mi_phone+'</td>'+
                         '<td>'+r.data[i].mi_grade+'</td>'+
-                        '<td>'+r.data[i].mi_grade+'</td>'+
+                        '<td>'+r.data[i].mi_point+'</td>'+
                         '<td>'+r.data[i].mi_status+'</td>'+
                         '<td>'+
                             '<button data-seq="'+r.data[i].mi_seq+'" class="member_delete">삭제</button>'+
@@ -26,6 +26,18 @@ $(function(){
                     '</tr>'
                 $("#member_list_body").append(tag);
             }
+            $(".member_delete").click(function(){
+                if(confirm("삭제하시겠습니까?")) {
+                    $.ajax({
+                        type:"delete",
+                        url:"/member/delete?seq="+$(this).attr("data-seq"),
+                        success:function(r) {
+                            alert(r.message);
+                            location.reload();
+                        }
+                    })
+                }
+            })
         }
     })
 
