@@ -61,7 +61,8 @@ $(function() {
             pi_point_rate:pi_point_rate,
             pi_caution:pi_caution,
             pi_weight:pi_weight,
-            pi_di_seq:pi_di_seq
+            pi_di_seq:pi_di_seq,
+            pi_img_uri:$("#img_preview").attr("img-uri")
         }
         $.ajax({
             type:"post",
@@ -72,5 +73,27 @@ $(function() {
                 alert(r.message);
             }
         }) 
+    })
+
+    $("#img_save").click(function() {
+        let form = $("#image_form");
+        let formData = new FormData(form[0]);
+        $.ajax({
+            type:"post",
+            url:"/upload",
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(r) {
+                if(r.status) {
+                    $("#img_save").prop("disabled", true);
+                    $("#img_delete").prop("disabled", false);
+                    $("#img_delete > input").prop("disabled", true);
+                    $("#img_preview").append('<img src="/image/'+r.image_uri+'">');
+                    $("#img_preview").attr("img-uri", r.image_uri);
+                }
+                alert(r.message);
+            }
+        })    
     })
 })

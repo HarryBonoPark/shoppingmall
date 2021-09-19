@@ -75,6 +75,19 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>이미지</td>
+                    <td class="img_form_td">
+                        <span id="img_preview">
+
+                        </span>
+                        <form id="image_form">
+                            <input type="file" accept="image/gif, image/jpeg, image/png, image/jpg" name="file">
+                            <button type="button" id="img_save">등록</button>
+                            <button type="button" id="img_delete" disabled>삭제</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2">
                         <button id="save">등록하기</button>
                     </td>

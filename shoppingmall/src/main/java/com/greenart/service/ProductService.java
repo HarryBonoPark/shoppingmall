@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.greenart.mapper.ProductMapper;
+import com.greenart.vo.ProductImageVO;
 import com.greenart.vo.ProductVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,13 @@ public class ProductService {
         resultMap.put("message", "상품이 추가되었습니다.");
 
         return resultMap;
+    }
+
+    public void insertProductImage(ProductImageVO vo) {
+        mapper.insertProductImage(vo);
+    }
+
+    public String selectProductImagePath(String uri) {
+        return mapper.selectProductImagePath(uri);
     }
 }

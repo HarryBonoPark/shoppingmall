@@ -18,4 +18,6 @@ public class ProductVO {
     private Integer pi_point_rate;
     private Integer pi_di_seq;
     private Integer pi_price;
+    
+    private String pi_img_uri;
 }

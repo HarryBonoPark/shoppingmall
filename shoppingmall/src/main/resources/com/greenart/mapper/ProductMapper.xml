@@ -6,12 +6,25 @@
         INSERT INTO product_info
         (
             pi_name, pi_cate_seq, pi_stock, pi_si_seq, pi_discount_rate, 
-            pi_caution, pi_weight, pi_point_rate, pi_di_seq, pi_price
+            pi_caution, pi_weight, pi_point_rate, pi_di_seq, pi_price, pi_img_uri
         )
         VALUES
         (
             #{pi_name}, #{pi_cate_seq}, #{pi_stock}, #{pi_si_seq}, #{pi_discount_rate}, 
-            #{pi_caution}, #{pi_weight}, #{pi_point_rate}, #{pi_di_seq}, #{pi_price}
+            #{pi_caution}, #{pi_weight}, #{pi_point_rate}, #{pi_di_seq}, #{pi_price}, #{pi_img_uri}
         )
     </insert>
+    <insert id="insertProductImage">
+        INSERT INTO prod_image
+        (
+            pimg_file_name, pimg_uri, pimg_size
+        )
+        VALUES
+        (
+            #{pimg_file_name}, #{pimg_uri}, #{pimg_size}
+        )
+    </insert>
+    <select id="selectProductImagePath" resultType="java.lang.String">
+        select pimg_file_name from prod_image where pimg_uri = #{uri} order by pimg_seq desc limit 1
+    </select>
 </mapper>
