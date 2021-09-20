@@ -150,6 +150,18 @@ $(function() {
                         '</tr>'
                     $("#product_tbody").append(tag);
                 }
+                $(".product_delete").click(function(){
+                    if(confirm("삭제하시겠습니까?")) {
+                        $.ajax({
+                            type:"delete",
+                            url:"/product/delete?seq="+$(this).attr("data-seq"),
+                            success:function(r) {
+                                alert(r.message);
+                                location.reload();
+                            }
+                        })
+                    }
+                })
             }
         })
     }

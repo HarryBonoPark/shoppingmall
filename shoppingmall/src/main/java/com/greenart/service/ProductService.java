@@ -91,4 +91,8 @@ public class ProductService {
 
         return list;
     }
+
+    public void deleteProductInfo(Integer seq) {
+        mapper.deleteProductInfo(seq);
+    }
 }

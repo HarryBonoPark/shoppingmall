@@ -15,4 +15,6 @@ public interface ProductMapper {
     public String selectProductImagePath(String uri);
 
     public List<ProductVO> selectProductInfo(String keyword, Integer category);
+
+    public void deleteProductInfo(Integer seq);
 }

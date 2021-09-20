@@ -34,4 +34,7 @@
             and pi_cate_seq =#{category}
         </if>
     </select>
+    <delete id="deleteProductInfo">
+        delete from product_info where pi_seq = #{seq}
+    </delete>
 </mapper>

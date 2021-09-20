@@ -9,6 +9,7 @@ import com.greenart.vo.ProductVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +35,16 @@ public class ProductAPIController {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
         List<ProductVO> list = service.selectProductInfo(keyword, category);
         resultMap.put("data", list);
+        return resultMap;
+    }
+
+    @DeleteMapping("/product/delete")
+    public Map<String, Object> deleteProductInfo(@RequestParam Integer seq) {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        service.deleteProductInfo(seq);
+
+        resultMap.put("message", "상품이 삭제되었습니다.");
         return resultMap;
     }
 }
