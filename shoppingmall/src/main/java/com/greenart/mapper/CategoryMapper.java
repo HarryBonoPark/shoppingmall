@@ -12,4 +12,6 @@ public interface CategoryMapper {
     public Integer isDuplicateCategory(String name);
     public List<CategoryVO> selectCategoryAll();
     public void deleteCategory(Integer seq);
+
+    public String selectCategoryNameBySeq(Integer seq);
 }

@@ -1,5 +1,7 @@
 package com.greenart.mapper;
 
+import java.util.List;
+
 import com.greenart.vo.ProductImageVO;
 import com.greenart.vo.ProductVO;
 
@@ -11,4 +13,6 @@ public interface ProductMapper {
 
     public void insertProductImage(ProductImageVO vo);
     public String selectProductImagePath(String uri);
+
+    public List<ProductVO> selectProductInfo(String keyword, Integer category);
 }

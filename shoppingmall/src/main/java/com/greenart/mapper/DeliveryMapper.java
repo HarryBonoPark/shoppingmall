@@ -12,4 +12,6 @@ public interface DeliveryMapper {
     public Integer selectDeliveryInfoByName(String name);
     public List<DeliveryVO> selectDeliveryInfoAll();
     public void deleteDeliveryInfo(Integer seq);
+
+    public String selectDeliveryNameBySeq(Integer seq);
 }

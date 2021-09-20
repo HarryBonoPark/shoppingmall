@@ -12,4 +12,6 @@ public interface SellerMapper {
     public Integer selectSellerInfoById(String id);
     public List<SellerVO> selectSellerInfoAll();
     public void deleteSellerInfo(Integer seq);
+
+    public String selectSellerNameBySeq(Integer seq);
 }

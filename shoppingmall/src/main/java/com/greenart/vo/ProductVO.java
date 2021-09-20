@@ -20,4 +20,8 @@ public class ProductVO {
     private Integer pi_price;
     
     private String pi_img_uri;
+
+    private String category_name;
+    private String seller_name;
+    private String delivery_name;
 }

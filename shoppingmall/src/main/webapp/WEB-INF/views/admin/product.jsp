@@ -94,5 +94,45 @@
             </tbody>
         </table>
     </div>
+
+    <div class="product_list">
+        <div class="search_area">
+            <span>카테고리 선택</span>
+            <select id="cate_search">
+                <option>전체</option>
+                <c:forEach items="${clist}" var="cate">
+                    <option value="${cate.cate_seq}">${cate.cate_name}</option>
+                </c:forEach>
+            </select>
+            <input type="text" id="search_keyword" placeholder="제품명 검색">
+            <button id="search">검색</button>
+        </div>
+    </div>
+    <table id="product_list_table">
+        <thead id="product_thead">
+            <tr>
+                <td>번호</td>
+                <td>제품명</td>
+                <td>제품이미지</td>
+                <td>카테고리</td>
+                <td>재고</td>
+                <td>업체명</td>
+                <td>등록일</td>
+                <td>할인율</td>
+                <td>적립율</td>
+                <td>주의사항</td>
+                <td>무게</td>
+                <td>배송사</td>
+                <td>제품가격</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody id="product_tbody">
+
+        </tbody>
+    </table>
+
+    <%@include file="/WEB-INF/views/includes/footer.jsp"%>
 </body>
 </html>

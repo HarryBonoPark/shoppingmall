@@ -21,4 +21,7 @@
     <delete id="deleteSellerInfo">
         delete from seller_info where si_seq = #{seq}
     </delete>
+    <select id="selectSellerNameBySeq" resultType="java.lang.String">
+        select si_name from seller_info where si_seq = #{seq}
+    </select>
 </mapper>

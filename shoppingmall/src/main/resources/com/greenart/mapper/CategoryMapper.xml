@@ -14,4 +14,7 @@
     <delete id="deleteCategory">
         delete from category where cate_seq = #{seq}
     </delete>
+    <select id="selectCategoryNameBySeq" resultType="java.lang.String">
+        select cate_name from category where cate_seq = #{seq}
+    </select>
 </mapper>

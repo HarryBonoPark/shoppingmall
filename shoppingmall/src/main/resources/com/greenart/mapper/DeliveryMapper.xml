@@ -21,4 +21,7 @@
     <delete id="deleteDeliveryInfo">
         delete from delivery_info where di_seq = #{seq}
     </delete>
+    <select id="selectDeliveryNameBySeq" resultType="java.lang.String">
+        select di_name from delivery_info where di_seq = #{seq}
+    </select>
 </mapper>

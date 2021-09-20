@@ -1,9 +1,13 @@
 package com.greenart.service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
+import com.greenart.mapper.CategoryMapper;
+import com.greenart.mapper.DeliveryMapper;
 import com.greenart.mapper.ProductMapper;
+import com.greenart.mapper.SellerMapper;
 import com.greenart.vo.ProductImageVO;
 import com.greenart.vo.ProductVO;
 
@@ -12,8 +16,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-    @Autowired
-    ProductMapper mapper;
+    @Autowired ProductMapper mapper;
+    @Autowired CategoryMapper c_mapper;
+    @Autowired SellerMapper s_mapper;
+    @Autowired DeliveryMapper d_mapper;
     
     public Map<String, Object> insertProductInfo(ProductVO vo) {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -62,5 +68,27 @@ public class ProductService {
 
     public String selectProductImagePath(String uri) {
         return mapper.selectProductImagePath(uri);
+    }
+
+    public List<ProductVO> selectProductInfo(String keyword, Integer category) {
+        if(keyword == null) { keyword = "%%"; }
+        else { keyword = "%"+keyword+"%"; }
+        
+        List<ProductVO> list = mapper.selectProductInfo(keyword, category);
+
+        for(int i=0; i<list.size(); i++) {
+            String cate_name = c_mapper.selectCategoryNameBySeq(list.get(i).getPi_cate_seq());
+            list.get(i).setCategory_name(cate_name);
+        }
+        for(int i=0; i<list.size(); i++) {
+            String seller_name = s_mapper.selectSellerNameBySeq(list.get(i).getPi_si_seq());
+            list.get(i).setSeller_name(seller_name);
+        }
+        for(int i=0; i<list.size(); i++) {
+            String delivery_name = d_mapper.selectDeliveryNameBySeq(list.get(i).getPi_di_seq());
+            list.get(i).setDelivery_name(delivery_name);
+        }
+
+        return list;
     }
 }

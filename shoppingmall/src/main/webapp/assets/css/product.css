@@ -1,6 +1,9 @@
 #img_preview img{
     width: 200px;
 }
+.preview img{
+    width: 50px;
+}
 
 /* .product_form {
     position: fixed; background-color: #fff;
@@ -72,3 +75,72 @@
 .product_table textarea {vertical-align: middle; margin-bottom: 0;
 width: 96%;}
 .product_table td {padding-bottom: 10px; padding-right: 10px;}
+
+
+#product_list_table td {
+    border-bottom: 1px solid #ccc; padding: 10px;
+    vertical-align: middle; text-align: center;
+}
+#product_list_table tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+#product_list_table {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
+#product_list_table thead td {background-color: #5f0080; color: #fff;}
+
+.product_modify, .product_delete {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+}
+
+#search {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 45px;
+    width: 60px;
+}
+
+#search:hover {
+    background-color: #f4f3f9;
+}
+
+.search_area input {
+    height: 25px;
+    width: 250px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#cate_search {
+    height: 45px;
+    width: 250px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.search_area span {
+    font-size: 15px;
+}

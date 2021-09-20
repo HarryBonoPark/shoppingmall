@@ -27,4 +27,11 @@
     <select id="selectProductImagePath" resultType="java.lang.String">
         select pimg_file_name from prod_image where pimg_uri = #{uri} order by pimg_seq desc limit 1
     </select>
+    <select id="selectProductInfo" resultType="com.greenart.vo.ProductVO">
+        select * from product_info
+        where pi_name LIKE #{keyword}
+        <if test = "category != null">
+            and pi_cate_seq =#{category}
+        </if>
+    </select>
 </mapper>
