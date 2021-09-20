@@ -96,4 +96,16 @@ $(function() {
             }
         })    
     })
+
+    $("#img_delete").click(function(){
+        let uri = $("#img_preview").attr("img_uri");
+        $("#img_preview").html("");
+
+        $("#image_form > input").val("");
+        $(this).prop("disabled", true);
+        $("#image_form > input").prop("disabled", false);
+        $("#img_save").prop("disabled", false);
+
+        alert("등록된 사진이 삭제되었습니다.");
+    })
 })
