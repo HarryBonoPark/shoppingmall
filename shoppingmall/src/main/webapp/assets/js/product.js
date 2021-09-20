@@ -71,6 +71,7 @@ $(function() {
             contentType:"application/json",
             success:function(r){
                 alert(r.message);
+                location.reload();
             }
         }) 
     })
@@ -109,31 +110,61 @@ $(function() {
         alert("등록된 사진이 삭제되었습니다.");
     })
 
-    $.ajax({
-        type:"get",
-        url:"/product/list",
-        success:function(r) {
-            for(let i=0; i<r.data.length; i++) {
-                let tag =
-                    '<tr>'+
-                        '<td>'+r.data[i].pi_seq+'</td>'+
-                        '<td>'+r.data[i].pi_name+'</td>'+
-                        '<td class="preview"><img src="/image/'+r.data[i].pi_img_uri+'"></td>'+
-                        '<td>'+r.data[i].category_name+'</td>'+
-                        '<td>'+r.data[i].pi_stock+'</td>'+
-                        '<td>'+r.data[i].seller_name+'</td>'+
-                        '<td>'+r.data[i].pi_create_dt+'</td>'+
-                        '<td>'+r.data[i].pi_discount_rate+'</td>'+
-                        '<td>'+r.data[i].pi_point_rate+'</td>'+
-                        '<td>'+r.data[i].pi_caution+'</td>'+
-                        '<td>'+r.data[i].pi_weight+'</td>'+
-                        '<td>'+r.data[i].delivery_name+'</td>'+
-                        '<td>'+r.data[i].pi_price+'</td>'+
-                        '<td><button class="product_modify" data-seq="'+r.data[i].pi_seq+'">수정</button></td>'+
-                        '<td><button class="product_delete" data-seq="'+r.data[i].pi_seq+'">삭제</button></td>'+
-                    '</tr>'
-                $("#product_tbody").append(tag);
-            }
+    getProductInfo();
+
+    function getProductInfo(keyword, cate_seq) {
+
+        $("#product_tbody").html("");
+
+        let url = "/product/list";
+        if(keyword == undefined || keyword == null) {
+            keyword = "";
         }
+        url += "?keyword="+keyword;
+        if(cate_seq != undefined && cate_seq != null) {
+            url += "&category="+cate_seq;
+        }
+
+        $.ajax({
+            type:"get",
+            url:url,
+            success:function(r) {
+                for(let i=0; i<r.data.length; i++) {
+                    let tag =
+                        '<tr>'+
+                            '<td>'+r.data[i].pi_seq+'</td>'+
+                            '<td>'+r.data[i].pi_name+'</td>'+
+                            '<td class="preview"><img src="/image/'+r.data[i].pi_img_uri+'"></td>'+
+                            '<td>'+r.data[i].category_name+'</td>'+
+                            '<td>'+r.data[i].pi_stock+'</td>'+
+                            '<td>'+r.data[i].seller_name+'</td>'+
+                            '<td>'+r.data[i].pi_create_dt+'</td>'+
+                            '<td>'+r.data[i].pi_discount_rate+'</td>'+
+                            '<td>'+r.data[i].pi_point_rate+'</td>'+
+                            '<td>'+r.data[i].pi_caution+'</td>'+
+                            '<td>'+r.data[i].pi_weight+'</td>'+
+                            '<td>'+r.data[i].delivery_name+'</td>'+
+                            '<td>'+r.data[i].pi_price+'</td>'+
+                            '<td><button class="product_modify" data-seq="'+r.data[i].pi_seq+'">수정</button></td>'+
+                            '<td><button class="product_delete" data-seq="'+r.data[i].pi_seq+'">삭제</button></td>'+
+                        '</tr>'
+                    $("#product_tbody").append(tag);
+                }
+            }
+        })
+    }
+    $("#search").click(function(){
+        let seq = $("#cate_search option:selected").val();
+        let keyword = $("#search_keyword").val();
+        if(seq == "전체") seq = null;
+        getProductInfo(keyword, seq);
     })
+
+    $("#cate_search").change(function(){
+        let seq = $("#cate_search option:selected").val();
+        let keyword = $("#search_keyword").val();
+        if(seq == "전체") seq = null;
+        getProductInfo(keyword, seq);
+    })
+
 })
