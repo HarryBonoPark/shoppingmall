@@ -95,4 +95,11 @@ public class ProductService {
     public void deleteProductInfo(Integer seq) {
         mapper.deleteProductInfo(seq);
     }
+
+    public ProductVO selectProductInfoBySeq(Integer seq) {
+        return mapper.selectProductInfoBySeq(seq);
+    }
+    public void updateProductInfo(ProductVO vo) {
+        mapper.updateProductInfo(vo);
+    }
 }

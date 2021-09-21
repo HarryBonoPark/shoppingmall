@@ -17,4 +17,7 @@ public interface ProductMapper {
     public List<ProductVO> selectProductInfo(String keyword, Integer category);
 
     public void deleteProductInfo(Integer seq);
+
+    public ProductVO selectProductInfoBySeq(Integer seq);
+    public void updateProductInfo(ProductVO vo);
 }

@@ -93,6 +93,7 @@
                 <tr>
                     <td colspan="4">
                         <button id="save">등록하기</button>
+                        <button id="modify">수정하기</button>
                     </td>
                 </tr>
             </tbody>
