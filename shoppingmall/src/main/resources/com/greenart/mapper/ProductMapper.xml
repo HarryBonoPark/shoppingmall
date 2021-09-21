@@ -37,4 +37,22 @@
     <delete id="deleteProductInfo">
         delete from product_info where pi_seq = #{seq}
     </delete>
+    <select id="selectProductInfoBySeq" resultType="com.greenart.vo.ProductVO">
+        select * from product_info where pi_seq = #{seq}
+    </select>
+    <update id="updateProductInfo">
+        update product_info set
+            pi_name = #{pi_name},
+            pi_cate_seq = #{pi_cate_seq},
+            pi_stock = #{pi_stock},
+            pi_si_seq = #{pi_si_seq},
+            pi_discount_rate = #{pi_discount_rate},
+            pi_caution = #{pi_caution},
+            pi_weight = #{pi_weight},
+            pi_point_rate = #{pi_point_rate},
+            pi_di_seq = #{pi_di_seq},
+            pi_price = #{pi_price},
+            pi_img_uri = #{pi_img_uri}
+        where pi_seq = #{pi_seq}
+    </update>
 </mapper>
