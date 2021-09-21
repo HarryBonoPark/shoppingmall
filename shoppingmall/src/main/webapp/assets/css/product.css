@@ -5,20 +5,42 @@
     width: 50px;
 }
 
-/* .product_form {
+#add_product{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    border-radius: 3px;
+    border: 1px solid #5f0080;
+    background-color: #fff;
+    color: #5f0080; padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+#add_product:hover {
+    background-color: #f4f3f9;
+}
+
+#close {
+    position: absolute; right: 20px; top: 20px;
+    font-size: 20px; padding: 0; background-color: transparent; border: 0;
+    line-height: 27px; color: #fff; cursor: pointer;
+}
+
+.product_form {
     position: fixed; background-color: #fff;
     z-index: 999; 
     padding: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     padding-top: 80px;
     border-radius: 5px;
-    left: 50%; margin-left: -130px; 
+    left: 40%; margin-left: -130px; 
     display: none;
-} */
-.product_form> h1 {
+}
+.product_form > h1 {
     width: 100%; position: absolute; top: 0; left: 0;
-    padding: 20px; color: #333; user-select: none; cursor: grab;
+    padding: 20px; color: #fff; user-select: none; cursor: grab;
     font-size: 24px; text-align: center; font-weight: 700; box-sizing: border-box;
+    background-color: #5f0080;
 }
 /* .product_form > h1:active {
     cursor: grabbing;

@@ -1,5 +1,26 @@
 $(function() {
 
+    $("#add_product").click(function(){
+        $(".product_form").css("display", "block");
+        $("#img_preview").html("");
+        $("#save").css("display", "block");
+        $("#modify").css("display", "none");
+        $(".product_form > h1").html("상품 추가");
+    });
+    
+    $("#close").click(function(){
+        if(confirm("입력을 취소하시겠습니까?\n(저장하지 않은 정보는 모두 사라집니다.)")){
+            $(".product_form").css("display","");
+            $(".product_form input").val("");
+            $(".product_form select option:first-child").prop("selected", true);
+            $(".product_form textarea").val("");
+        }
+    })
+
+    $(".product_form").draggable({
+        handle:"h1"
+    })
+
     $("#product").addClass("current");
 
     $("#save").click(function(){

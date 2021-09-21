@@ -7,13 +7,17 @@
     <title>관리자 :: 상품</title>
     <link rel="stylesheet" href="/assets/css/product.css">
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/product.js"></script>
 </head>
 <body>
     <%@include file="/WEB-INF/views/admin/main.jsp" %>
     <h1 class="title">상품 관리</h1>
+    <div class="add_button_area">
+        <button id="add_product">상품 추가</button>
+    </div>
     <div class="product_form">
-        <!-- <h1>상품 추가</h1> -->
+        <h1>상품 추가</h1>
         <table class="product_table">
             <tbody>
                 <tr>
@@ -93,6 +97,7 @@
                 </tr>
             </tbody>
         </table>
+        <button id="close">&times;</button>
     </div>
 
     <div class="product_list">
