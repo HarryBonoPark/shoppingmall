@@ -20,4 +20,9 @@ public interface ProductMapper {
 
     public ProductVO selectProductInfoBySeq(Integer seq);
     public void updateProductInfo(ProductVO vo);
+
+    public List<ProductVO> selectRecommandProduct();
+    public List<ProductVO> selectNotRecommandProduct();
+    public void insertRecommandProduct(Integer prod_seq);
+    public void deleteRecommandProduct(Integer prod_seq);
 }

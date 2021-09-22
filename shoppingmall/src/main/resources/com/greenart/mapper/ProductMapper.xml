@@ -55,4 +55,19 @@
             pi_img_uri = #{pi_img_uri}
         where pi_seq = #{pi_seq}
     </update>
+
+    <select id="selectRecommandProduct" resultType="com.greenart.vo.ProductVO">
+        select * from product_info a inner join recommand b
+        on a.pi_seq = b.reco_pi_seq
+    </select>
+    <select id="selectNotRecommandProduct" resultType="com.greenart.vo.ProductVO">
+        select a.* from product_info a left outer join recommand b
+        on a.pi_seq = b.reco_pi_seq where b.reco_pi_seq is null 
+    </select>
+    <insert id="insertRecommandProduct">
+        insert into recommand (reco_pi_seq) values (#{prod_seq})
+    </insert>
+    <delete id="deleteRecommandProduct">
+        delete from recommand where reco_pi_seq = #{prod_seq}
+    </delete>
 </mapper>

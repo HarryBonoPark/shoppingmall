@@ -102,4 +102,40 @@ public class ProductService {
     public void updateProductInfo(ProductVO vo) {
         mapper.updateProductInfo(vo);
     }
+
+    public List<ProductVO> selectRecommandProduct() {
+        List<ProductVO> list = mapper.selectRecommandProduct();
+
+        for(int i=0; i<list.size(); i++) {
+            String cate_name = c_mapper.selectCategoryNameBySeq(list.get(i).getPi_cate_seq());
+            list.get(i).setCategory_name(cate_name);
+        }
+        for(int i=0; i<list.size(); i++) {
+            String seller_name = s_mapper.selectSellerNameBySeq(list.get(i).getPi_si_seq());
+            list.get(i).setSeller_name(seller_name);
+        }
+
+        return list;
+    }
+    public List<ProductVO> selectNotRecommandProduct() {
+        List<ProductVO> list = mapper.selectNotRecommandProduct();
+
+        for(int i=0; i<list.size(); i++) {
+            String cate_name = c_mapper.selectCategoryNameBySeq(list.get(i).getPi_cate_seq());
+            list.get(i).setCategory_name(cate_name);
+        }
+        for(int i=0; i<list.size(); i++) {
+            String seller_name = s_mapper.selectSellerNameBySeq(list.get(i).getPi_si_seq());
+            list.get(i).setSeller_name(seller_name);
+        }
+        
+        return list;
+    }
+    public void insertRecommandProduct(Integer prod_seq) {
+        mapper.insertRecommandProduct(prod_seq);
+    }
+    public void deleteRecommandProduct(Integer prod_seq) {
+        mapper.deleteRecommandProduct(prod_seq);
+    }
+
 }
