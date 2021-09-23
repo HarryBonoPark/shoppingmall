@@ -1,5 +1,4 @@
-<%@page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,13 +51,13 @@
                         <button id="search_btn">
                             <img src="/assets/images/ico_search_x2.png">
                         </button>
-                        <a href="#">
-                            <img src="/assets/images/ico_delivery_setting.svg">
-                        </a>
-                        <a href="#">
-                            <img src="/assets/images/ico_cart.svg">
-                        </a>
                     </div>
+                    <a href="#">
+                        <img src="/assets/images/ico_delivery_setting.svg">
+                    </a>
+                    <a href="#">
+                        <img src="/assets/images/ico_cart.svg">
+                    </a>
                 </div>
             </div>
             <div class="categories">

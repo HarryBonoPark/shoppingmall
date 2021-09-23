@@ -22,7 +22,7 @@ position: relative; top: -1px;}
 
 .search_box img {width: 30px;}
 .search_box button {padding: 0; margin: 0; border: 0; background-color: transparent;
-    outline: none; cursor: pointer; height: 30px;
+    outline: none; cursor: pointer; height: 35px;
 }
 .search_box input {border: 0; outline: none; background-color: transparent; margin-left: 10px;
     width: 160px;
@@ -32,4 +32,4 @@ position: relative; top: -1px;}
     border-radius: 99px;
 }
 .search_area > * {vertical-align: middle;}
-.search_area {float: right; padding-top: 10px;}
+.search_area {float: right; }
